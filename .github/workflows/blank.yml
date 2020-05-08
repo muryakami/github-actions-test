@@ -33,4 +33,4 @@ jobs:
         echo test, and deploy your project.
 
     - name: Run git diff script
-      run: git diff HEAD^ HEAD --name-only
+      run: git diff HEAD~ --name-only
