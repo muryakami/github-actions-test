@@ -32,5 +32,5 @@ jobs:
         echo Add other actions to build,
         echo test, and deploy your project.
 
-    - name: git diff --name-only origin/master...HEAD
-      run: git diff --name-only origin/master...HEAD
+    - name: Run git diff --name-only origin/master...HEAD
+      run: git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570...HEAD
