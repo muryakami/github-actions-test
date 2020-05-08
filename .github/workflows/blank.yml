@@ -35,23 +35,14 @@ jobs:
     - name: Run git status
       run: git status
 
-    - name: Run git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570...HEAD
-      run: git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570...HEAD
-
-    - name: Run git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570..HEAD
-      run: git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570..HEAD
+    - name: Run git diff --name-only origin/master
+      run: git diff --name-only origin/master
 
     - name: Run git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570
       run: git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570
 
-    - name: Run git diff --name-only origin/master
-      run: git diff --name-only origin/master
-
     - name: Run git diff artcles
       run: git diff artcles
 
-    - name: Run git diff artcles --name-only
-      run: git diff artcles --name-only 52a3d603e6df49996ece5fe305e48c025c334570
-
-    - name: Run git diff 52a3d603e6df49996ece5fe305e48c025c334570...HEAD --name-only  --relative=articles
-      run: git diff 52a3d603e6df49996ece5fe305e48c025c334570...HEAD --name-only  --relative=articles
+    - name: Run git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=articles
+      run: git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=articles
