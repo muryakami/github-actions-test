@@ -50,3 +50,6 @@ jobs:
           echo $DIR_NAME
           echo $ITEMS_PATH/$DIR_NAME
         done
+
+    - name: sample script2
+      run: bash sample.sh
