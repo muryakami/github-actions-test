@@ -53,12 +53,13 @@ jobs:
           echo $ITEMS_PATH/$DIR_NAME
         done
 
-    # - name: sample script2
-    #   env:
-    #     SECRET_VARIABLE: ${{ secrets.SECRET_VARIABLE }}
-    #     GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-    #   run: bash sample.sh
-    #     echo $GITHUB_TOKEN
+    - name: sample script2
+      env:
+        SECRET_VARIABLE: ${{ secrets.SECRET_VARIABLE }}
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      run: |
+        bash sample.sh
+        echo $GITHUB_TOKEN
 
     - name: output TOKEN
       env:
@@ -68,10 +69,3 @@ jobs:
         echo ${SECRET_VARIABLE}
         echo ${GITHUB_TOKEN}
         echo ${GITHUB_SHA}
-
-    - name: sample script2
-      env:
-        SECRET_VARIABLE: ${{ secrets.SECRET_VARIABLE }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: bash sample.sh
-        echo $GITHUB_TOKEN
