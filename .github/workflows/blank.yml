@@ -71,3 +71,8 @@ jobs:
         echo ${GITHUB_TOKEN}
         echo ${GITHUB_SHA}
         echo ${QIITA_TOKEN}
+
+    - name: output QIITA_TOKEN
+      env:
+        QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
+      run: echo ${QIITA_TOKEN}
