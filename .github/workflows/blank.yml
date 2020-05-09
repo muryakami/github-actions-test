@@ -38,8 +38,15 @@ jobs:
     - name: Run git diff --name-only origin/master
       run: git diff --name-only origin/master
 
-    - name: Run git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570
-      run: git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570
-
     - name: Run git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=items
       run: git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=items
+
+    - name: sample script
+      run: |
+        echo 'Submit articles to Qiita!'
+        ITEMS_PATH=items
+        for FILE in `git diff origin/master --name-only --relative=$ITEMS_PATH | grep item.md` ; do
+          DIR_NAME=`dirname $FILE`
+          echo $DIR_NAME
+          echo $ITEMS_PATH/$DIR_NAME
+        done
