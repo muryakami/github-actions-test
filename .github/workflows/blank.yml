@@ -47,10 +47,10 @@ jobs:
       run: |
         echo 'Submit articles to Qiita!'
         ITEMS_PATH=items
-        for FILE in `git diff origin/master --name-only --relative=$ITEMS_PATH | grep item.md` ; do
-          DIR_NAME=`dirname $FILE`
-          echo $DIR_NAME
-          echo $ITEMS_PATH/$DIR_NAME
+        for FILE in `git diff origin/master --name-only --relative=${ITEMS_PATH} | grep item.md` ; do
+          DIR_NAME=`dirname ${FILE}`
+          echo ${DIR_NAME}
+          echo ${ITEMS_PATH}/${DIR_NAME}
         done
 
     - name: sample script2
@@ -59,13 +59,15 @@ jobs:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         bash sample.sh
-        echo $GITHUB_TOKEN
+        echo ${GITHUB_TOKEN}
 
     - name: output TOKEN
       env:
         SECRET_VARIABLE: ${{ secrets.SECRET_VARIABLE }}
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        QIITA_TOKEN: ${{ secrets.QIITA_TOKEN }}
       run: |
         echo ${SECRET_VARIABLE}
         echo ${GITHUB_TOKEN}
         echo ${GITHUB_SHA}
+        echo ${QIITA_TOKEN}
