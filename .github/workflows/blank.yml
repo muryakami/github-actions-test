@@ -21,8 +21,6 @@ jobs:
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
     - uses: actions/checkout@v1
-      with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
 
     # Runs a single command using the runners shell
     - name: Run a one-line script
@@ -54,12 +52,7 @@ jobs:
         done
 
     - name: sample script2
-      env:
-        SECRET_VARIABLE: ${{ secrets.SECRET_VARIABLE }}
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      run: |
-        bash sample.sh
-        echo ${GITHUB_TOKEN}
+      run: bash sample.sh
 
     - name: output TOKEN
       env:
