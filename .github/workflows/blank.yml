@@ -41,5 +41,5 @@ jobs:
     - name: Run git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570
       run: git diff --name-only 52a3d603e6df49996ece5fe305e48c025c334570
 
-    - name: Run git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=iterms
-      run: git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=iterms
+    - name: Run git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=items
+      run: git diff 52a3d603e6df49996ece5fe305e48c025c334570 --name-only --relative=items
